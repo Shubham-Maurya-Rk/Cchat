@@ -20,6 +20,7 @@ const Chats = ({ user }) => {
   const sendMsg = (e) => {
     e.preventDefault();
     const msg = document.getElementById('msgBox').value;
+    if(msg==="")return;
     const date = new Date();
     let date_time = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${formatTime(date.getHours())}:${formatTime(date.getMinutes())}`;
     setmessages(messages => [...messages, ['You', msg, date_time]]);
@@ -78,7 +79,7 @@ const Chats = ({ user }) => {
               return msg[0] === "" ? <div key={idx} className='joined'>{msg[1]}</div> :
                 <div key={idx} className={`msg float-${msg[0] === "You" ? "right" : "left"}`}>
                   <h6>~{msg[0]}</h6>
-                  <p>{msg[1]}</p>
+                  <p className='word-break'>{msg[1]}</p>
                   <small className='date-time'>{msg[2]}</small>
                 </div>
             })
@@ -87,7 +88,7 @@ const Chats = ({ user }) => {
       </div>
       <form onSubmit={sendMsg} id="inputBox" className='displayCenter'>
         <span className='scrolltobottom displayCenter' onClick={scrollToBottom}><img src={bottomArrow} alt="" /></span>
-        <input type="text" id='msgBox' />
+        <input type="text" placeholder='Message...' id='msgBox' />
         <button type='submit'></button>
       </form>
     </div>

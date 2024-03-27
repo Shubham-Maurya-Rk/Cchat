@@ -127,6 +127,10 @@
     height: 15px;
 }
 
+.word-break{
+    word-wrap: break-word;
+}
+
 @keyframes chatlogo {
     0%{
         top: -10%;
