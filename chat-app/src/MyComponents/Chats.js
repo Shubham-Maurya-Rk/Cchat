@@ -5,8 +5,8 @@ import bottomArrow from '../imgs/bottom-arrow.png'
 import socketIo from 'socket.io-client';
 // import { user } from './Join'
 
-// const ENDPOINT = window.location.origin;
-const ENDPOINT = "http://localhost:3001";
+const ENDPOINT = window.location.origin;
+// const ENDPOINT = "http://localhost:3001";
 let socket;
 const Chats = ({ user }) => {
   const [messages, setmessages] = useState([]);
