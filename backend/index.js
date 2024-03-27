@@ -15,12 +15,11 @@ const io=skt(server);
 let users={};
 
 app.use(cors())
-// app.use(express.static(path.resolve(__dirname,"../chat-app","build")))
+app.use(express.static(path.resolve(__dirname,"../chat-app","build")))
 
 
 app.get('/',(req,res)=>{
-    // res.sendFile(path.resolve(__dirname,"../chat-app","build","index.html"))
-    res.send("Server Working")
+    res.sendFile(path.resolve(__dirname,"../chat-app","build","index.html"))
 });
 
 io.on('connection',(socket)=>{
