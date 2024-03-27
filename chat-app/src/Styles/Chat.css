@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+}
+
+#chatCont{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(white,rgba(0, 75, 181, 0.486));
+}
+
+#chatBox{
+    width: 90%;
+    height: 90%;
+    /* position: relative; */
+    border-radius: 20px;
+    background-color: rgba(0, 75, 181, 0.68);
+    /* padding: 2ch; */
+}
+
+#chatLogo{
+    height: 10%;
+    color: white;
+    position: relative;
+    top: 0;
+    font-size: 1.5em;
+    /* margin-bottom: 1vh; */
+}
+
+#chatLogo img{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    margin: 0 1vh;
+}
+#chatLogo>div{
+    animation: chatlogo 3s infinite ease-in-out;
+    position: relative;
+}
+
+#chat{
+    /* width: 100%; */
+    overflow-y: auto;
+    border: 2px solid white;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background: white;
+}
+
+#inputBox{
+    height: 10%;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    /* margin: 2vh 0; */
+}
+
+#inputBox input{
+    padding:1.5vh 2vh;
+    width: 80%;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2em;
+    margin: 0 .5vh;
+}
+
+#inputBox button{
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    border: none;
+    background:url('../imgs/sendBtn.png');
+    background-size: cover;
+    cursor: pointer;
+}
+
+#inputBox button:hover{
+    background-color: rgba(0, 0, 0, 0.301);
+    background-blend-mode: darken;
+}
+.msg{
+    max-width: 60%;
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+
+.joined{
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 6px ;
+    color: white;
+    border-radius: 10px;
+    background-color: grey;
+    margin-top: 5px;
+}
+.float-right{
+    align-self: flex-end;
+    background-color: rgb(112, 169, 249);
+}
+.float-left{
+    align-self: flex-start;
+    background-color: rgba(0, 75, 181, 0.68);
+}
+.date-time{
+    font-size: 11px;
+}
+
+@keyframes chatlogo {
+    0%{
+        top: -10%;
+    }50%{
+        top: 7%;
+    }100%{
+        top: -10%;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    #chatBox {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+  }
